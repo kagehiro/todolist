@@ -2,40 +2,44 @@
     <list :lists="lists" />
 </template>
 
-<script>
-import List from '../components/List.vue'
-
-export default {
+<script lang="ts">
+import List from "@/components/List.vue"
+import Vue from "vue"
+import { Item } from "@/types/todo"
+interface Data {
+    lists: Item[]
+}
+export default Vue.extend({
     components: {
-        List
+        List,
     },
-    data: () => ({
+    data: (): Data => ({
         lists: [
             {
-                taskname: "掃除する",
+                name: "掃除する",
                 limit: "2020/10/10",
                 priority: "High",
-                status: "InProgress"
+                status: "InProgress",
             },
             {
-                taskname: "買い物に行く",
+                name: "買い物に行く",
                 limit: "2020/10/10",
                 priority: "High",
-                status: "InProgress"
+                status: "InProgress",
             },
             {
-                taskname: "夕飯作る",
+                name: "夕飯作る",
                 limit: "2020/10/10",
                 priority: "Normal",
-                status: "TODO"
+                status: "TODO",
             },
             {
-                taskname: "銀行に行く",
+                name: "銀行に行く",
                 limit: "2020/10/10",
                 priority: "Low",
-                status: "Done"
-            }
-        ]
-    })
-}
+                status: "Done",
+            },
+        ],
+    }),
+})
 </script>
