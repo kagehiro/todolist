@@ -3,10 +3,10 @@ import { required, max } from "vee-validate/dist/rules"
 
 extend("required", {
     ...required,
-    message: "{_field_} can not be empty",
+    message: "{_field_}が入力されていません",
 })
 
 extend("max", {
     ...max,
-    message: "{_field_} may not be greater than {length} characters",
+    message: "{_field_}は{length}文字までです",
 })
