@@ -5,9 +5,10 @@
 <script lang="ts">
 import Detail from "@/components/Detail.vue"
 import Vue from "vue"
-import { Item } from "@/types/todo"
+import { priorityItems, statusItems } from "@/formdata/taskformdata"
+import { Priority, Status, TodoTask } from "@/types/todo"
 interface Data {
-    TaskDetails: Item
+    TaskDetails: TodoTask
 }
 export default Vue.extend({
     components: {
@@ -20,7 +21,7 @@ export default Vue.extend({
             limit: "2020/10/10",
             priority: "High",
             status: "InProgress",
-            label: "家事",
+            labels: ["Foo", "Bar"],
         },
     }),
 })

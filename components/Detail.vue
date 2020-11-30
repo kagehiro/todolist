@@ -18,18 +18,22 @@
             <div>
                 <span class="each-item">ステータス：</span>{{ task.status }}
             </div>
-            <div><span class="each-item">ラベル：</span>{{ task.label }}</div>
+            <div>
+                <span class="each-item">ラベル：</span
+                ><v-chip>{{ task.labels }}</v-chip>
+            </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue, { PropType } from "vue"
-import { Item } from "@/types/todo"
+import { priorityItems, statusItems } from "@/formdata/taskformdata"
+import { Priority, Status, TodoTask } from "@/types/todo"
 export default Vue.extend({
     props: {
         task: {
-            type: Object as PropType<Item>,
+            type: Object as PropType<TodoTask>,
         },
     },
 })

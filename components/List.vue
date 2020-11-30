@@ -23,11 +23,12 @@
 
 <script lang="ts">
 import Vue, { PropType } from "vue"
-import { Item } from "@/types/todo"
+import { priorityItems, statusItems } from "@/formdata/taskformdata"
+import { Priority, Status, TodoTask } from "@/types/todo"
 export default Vue.extend({
     props: {
         lists: {
-            type: Array as PropType<Item[]>,
+            type: Array as PropType<TodoTask[]>,
         },
     },
 })

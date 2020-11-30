@@ -5,9 +5,10 @@
 <script lang="ts">
 import List from "@/components/List.vue"
 import Vue from "vue"
-import { Item } from "@/types/todo"
+import { priorityItems, statusItems } from "@/formdata/taskformdata"
+import { Priority, Status, TodoTask } from "@/types/todo"
 interface Data {
-    lists: Item[]
+    lists: TodoTask[]
 }
 export default Vue.extend({
     components: {
@@ -31,7 +32,7 @@ export default Vue.extend({
                 name: "夕飯作る",
                 limit: "2020/10/10",
                 priority: "Normal",
-                status: "TODO",
+                status: "Todo",
             },
             {
                 name: "銀行に行く",

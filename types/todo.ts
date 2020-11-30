@@ -1,8 +1,10 @@
-export interface Item {
+export type Priority = "High" | "Normal" | "Low"
+export type Status = "Todo" | "InProgress" | "Done"
+export interface TodoTask {
     name: string
     description?: string
     limit: string
-    priority: string
-    status: string
-    label?: string
+    priority: Priority | null
+    status: Status | null
+    labels?: string[]
 }

@@ -67,15 +67,7 @@
                 ></v-select>
             </validation-provider>
             <validation-provider name="ラベル">
-                <v-text-field v-model="labels" label="ラベル"></v-text-field>
-                <ul>
-                    <li v-for="label in labels" :key="label">
-                        <v-chip close @click:close="remove(label)">
-                            <strong>{{ labels }}</strong>
-                        </v-chip>
-                    </li>
-                </ul>
-                <!-- <v-combobox
+                <v-combobox
                     v-model="label"
                     :items="item"
                     chips
@@ -98,7 +90,7 @@
                             <strong>{{ item }}</strong>
                         </v-chip>
                     </template>
-                </v-combobox> -->
+                </v-combobox>
             </validation-provider>
 
             <v-btn class="mr-4" type="submit" :disabled="invalid">
@@ -130,7 +122,7 @@ export default Vue.extend({
             limit: "",
             priority: null,
             status: null,
-            labels: [],
+            label: "",
         },
     }),
 
@@ -151,7 +143,7 @@ export default Vue.extend({
             this.task.limit = ""
             this.task.priority = null
             this.task.status = null
-            this.task.labels = []
+            this.task.label = ""
             reset()
         },
         // remove(item: string) {
